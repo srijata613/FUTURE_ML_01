@@ -107,7 +107,10 @@ Dashboard Main View
 
 The central chart shows the transition from observed sales (solid line) to the model's future prediction (dashed line), providing a continuous 4-year visual timeline.
 
-Placeholder for Screenshot: VISUALIZATION/PowerBI_Screenshots/Dashboard_Main_View.png
+Placeholder for Screenshot: 
+![Dashboard_Main_View](https://github.com/user-attachments/assets/0ccbf848-7bd6-4131-8693-95f7f9e9a7e4)
+
+
 
 Seasonal & Operational Insights
 
@@ -130,4 +133,5 @@ Shows: Consistent daily patterns, confirming that operational workload is heavie
 Segmented Forecasting: Rerun the Prophet model to forecast sales by Region and by Product Category to provide granular insights for local managers and inventory planning for specific product lines (e.g., Furniture vs. Technology).
 
 Model Validation: Introduce explicit residual plots and use cross-validation techniques (like those in Prophet) to formally quantify the model's mean absolute error (MAE) and bias, enhancing professional credibility.
+
 
