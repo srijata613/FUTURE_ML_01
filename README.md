@@ -64,7 +64,11 @@ README.md
 ✅ Key Results & Screenshots
 
 * The central chart on the dashboard shows historical sales (solid line) transitioning into the forecasted future (dashed line).
+  ![Dashboard_Main_View](https://github.com/user-attachments/assets/fceca232-f225-44f8-9c7c-f0877b8f2d61)
+
 * Additional visuals: Sales by month (highlights Q4 spike), Sales by day of week (shows Monday/Friday peaks).
+  ![Seasonal_Insights](https://github.com/user-attachments/assets/e8ae005e-0790-48e5-b9cb-c76e5718d304)
+
 * These insights informed the recommendations around inventory, staffing and marketing.
 
 📈 Next Steps & Enhancements
@@ -86,3 +90,4 @@ A full list of Python libraries is in `CODE/requirements.txt`. At minimum you’
 ## 📝 License
 
 This project is licensed under the terms specified in the `LICENSE` file.
+
