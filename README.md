@@ -1,137 +1,88 @@
-﻿# Retail Sales Forecasting Project (Superstore Data)
-### Predictive Analytics Internship Project
+Retail Sales Forecasting Project (Superstore Data)
 
-This project uses historical Superstore sales data to develop and deploy a time-series forecasting model (Facebook Prophet) and visualize the results in an interactive Power BI dashboard.
+Predictive Analytics Internship Project — Time Series Forecasting for Retail
 
-Retail Sales Forecasting Project: Superstore Data
+🧠 Project Overview
 
-Predictive Analytics Internship Project: Time Series Forecasting for Retail
+This project uses historical sales data from a “Superstore” to build a time‐series forecasting model (using Facebook Prophet) and presents the results through an interactive dashboard (built in Power BI).
+The objective: forecast the next 12 months of total sales, enabling stakeholders to optimise inventory planning, staffing, and marketing spend.
 
-This project focuses on leveraging historical transactional data from the Superstore dataset to build a robust time series forecasting model using Facebook Prophet. The goal was to accurately predict the next 12 months of total sales, enabling the business to optimize inventory, staffing, and marketing spend.
+📌 Key Business Outcomes & Findings
 
-🚀 1. Key Business Outcomes & Findings
+* Generated a 12-month forecast of total sales based on 4 years of historical data.
+* Predicted a ~6.3% year-on-year growth in revenue.
+* Identified peak sales season in November/December (≈150% above average) and highest daily sales volume on Fridays/Mondays.
+* Actionable insights:
 
-The analysis successfully generated a 1-year sales forecast, providing the necessary data for strategic planning.
+  * Increase stock procurement by ~150% beginning October to manage Q4 surge.
+  * Align staffing to the high-volume days (Friday/Monday) and reduce coverage during slower days/weeks.
+  * Launch marketing push in Jan/Feb to mitigate the post‐holiday trough.
 
-Metric
+🛠 Methodology & Technical Stack
 
-Historical Value (2014-2017)
+| Stage                | Framework / Tool | Description                                                                                |
+| -------------------- | ---------------- | ------------------------------------------------------------------------------------------ |
+| Data Preparation     | Python (pandas)  | Aggregated transactional data into a daily time-series (`ds`, `y`); handled missing dates. |
+| Feature Engineering  | Python (Prophet) | Created custom holiday dataframe; modelled yearly & weekly seasonality.                    |
+| Modelling            | Facebook Prophet | Trained on 4 years of data; generated ~365-day forecast.                                   |
+| Dashboard & Analysis | Power BI (DAX)   | Built interactive dashboard showing actual vs predicted, drill-down by month/day.          |
 
-Predicted Value (Next 12 Months)
+📁 Repository Structure
 
-Actionable Insight
+```
+CODE/
+  ├─ sales_forecasting_colab.py        # Main Python script for data prep, modelling & forecasting  
+  ├─ requirements.txt                   # Python dependencies  
+DATA/
+  ├─ (raw + processed datasets)  
+OUTPUT/
+  ├─ forecast_results.csv               # Forecast output  
+VISUALIZATION/
+  ├─ Power BI dashboard files (.pbix)   # Interactive dashboard  
+.gitignore  
+LICENSE  
+README.md
+```
 
-Total Revenue
+🔍 How to Run the Project
 
-$\approx \$2.30 \text{ Million}$
+1. Clone the repository:
 
-$\approx \$615,000$
+   ```bash
+   git clone https://github.com/srijata613/FUTURE_ML_01.git  
+   ```
+2. Navigate into the `CODE` directory and install dependencies:
 
-Predicted 6.3% YOY Growth for the coming year.
+   ```bash
+   cd FUTURE_ML_01/CODE  
+   pip install -r requirements.txt  
+   ```
+3. Open `sales_forecasting_colab.py` and run the notebook/script (either locally or in Google Colab).
+4. After forecasting is complete, open the Power BI dashboard in `VISUALIZATION/` to explore results.
+5. Review the `OUTPUT/forecast_results.csv` for tabular results or export visualisations as needed.
 
-Peak Season
+✅ Key Results & Screenshots
 
-November / December
+* The central chart on the dashboard shows historical sales (solid line) transitioning into the forecasted future (dashed line).
+* Additional visuals: Sales by month (highlights Q4 spike), Sales by day of week (shows Monday/Friday peaks).
+* These insights informed the recommendations around inventory, staffing and marketing.
 
-Confirmed Q4 surge (150% above average).
+📈 Next Steps & Enhancements
 
-Inventory Alert: Must increase stock orders by 150%+ starting in October.
+* *Segmented Forecasting*: Extend the model to forecast by region or product-category (e.g., Furniture vs Technology) for more granular insights.
+* *Model Validation*: Add residual plots, cross-validation (time-series folds) and compute metrics like MAE, RMSE to enhance robustness.
+* *Automated Pipeline*: Prepare the codebase for automated/batch forecasting (e.g., monthly updates) and integrate with visualization refresh.
+* *Feature Expansion*: Incorporate additional exogenous variables (promotions, holidays, price changes) to boost predictive power.
 
-Operational Peak
+## 📋 Dependencies
 
-Friday / Monday
+A full list of Python libraries is in `CODE/requirements.txt`. At minimum you’ll need:
 
-Highest sales volume days.
+* `pandas`, `numpy` – for data manipulation
+* `fbprophet` (or `prophet`) – for time-series forecasting
+* `matplotlib`, `seaborn` – for plots (if used)
+* `Power BI` desktop – to view the dashboard (free version works)
 
-Staffing Optimization: Schedule max coverage on these two days.
+## 📝 License
 
-Actionable Recommendations
-
-Inventory Management: Increase stock procurement and storage capacity by 150% starting in October to prevent stock-outs during the predictable Q4 peak season.
-
-Staffing Efficiency: Reallocate labor hours to match demand patterns, ensuring maximum staffing levels on Fridays and Mondays and minimum essential coverage on the slower weekend/mid-week days.
-
-Marketing Strategy: Launch a significant demand generation campaign in January/February to mitigate the severe post-holiday sales trough predicted by the model.
-
-🛠️ 2. Methodology & Technical Stack
-
-The project followed a standard data science pipeline, translating raw transactional data into a clean time series forecast.
-
-Stage
-
-Tool / Library
-
-Key Task
-
-Data Preparation
-
-Python (Pandas)
-
-Aggregated transactional data (Sales) to a daily time series (ds, y) and handled missing dates.
-
-Feature Engineering
-
-Python (Prophet)
-
-Generated a custom holidays dataframe and incorporated yearly/weekly seasonality components.
-
-Modeling
-
-Facebook Prophet
-
-Trained on 4 years of historical data to capture complex multiplicative seasonality and generate a 365-day continuous forecast (yhat).
-
-Data Analysis
-
-Power BI (DAX)
-
-Created measures like Forecast Period Sales and Total Actual Sales to isolate and compare historical vs. predicted revenue.
-
-Visualization
-
-Power BI
-
-Built a fully interactive dashboard to display the forecast and diagnostics.
-
-Code References
-
-The full data processing and modeling script is available in: CODE/sales_forecasting_colab.py
-
-Python dependencies are listed in: CODE/requirements.txt
-
-📊 3. Visual Results (Power BI Dashboard)
-
-The final dashboard structure, simulated below, allows stakeholders to instantly grasp the overall trend (top chart) and drill down into operational specifics (bottom charts).
-
-Dashboard Main View
-
-The central chart shows the transition from observed sales (solid line) to the model's future prediction (dashed line), providing a continuous 4-year visual timeline.
-
-Placeholder for Screenshot: 
-![Dashboard_Main_View](https://github.com/user-attachments/assets/0ccbf848-7bd6-4131-8693-95f7f9e9a7e4)
-
-
-
-Seasonal & Operational Insights
-
-These charts provide the justification for the business recommendations, highlighting the peaks and troughs.
-
-Sales by Month (Inventory Focus)
-
-Sales by Day of Week (Staffing Focus)
-
-Shows: Extreme seasonal spikes in Q4 (Nov/Dec) and the corresponding low demand in Q1 (Jan/Feb).
-
-Shows: Consistent daily patterns, confirming that operational workload is heaviest on Mondays and Fridays.
-
-
-
-
-
-💡 Next Steps for Future Iteration
-
-Segmented Forecasting: Rerun the Prophet model to forecast sales by Region and by Product Category to provide granular insights for local managers and inventory planning for specific product lines (e.g., Furniture vs. Technology).
-
-Model Validation: Introduce explicit residual plots and use cross-validation techniques (like those in Prophet) to formally quantify the model's mean absolute error (MAE) and bias, enhancing professional credibility.
-
-
+This project is licensed under the terms specified in the `LICENSE` file.
